@@ -1,5 +1,5 @@
 #class can be defined as a blueprint or a tempate with cane be used to create various aboject
-
+import random
 class person:
     name= "Arjun"
     age= 20
@@ -65,3 +65,31 @@ def greet(fx):
 
 var1= decor()
 print(var1.showing())
+
+#inheritance:
+ 
+class form:
+    def __init__(self,name,id,age):
+        self.name=name
+        self.id= id
+        self.age=age
+    def show(self):
+        print(f"employee name is {self.name}, the employee's id is {self.id}, and the age is {self.age}")
+    
+employee2id= random.randint(1,100)
+employee3id= random.randint(1,100)
+
+employee1id= random.randint(1,100)
+emp1=form("Arjun", employee1id, 20)
+emp2=form("Radhika",employee2id, 22)
+emp3= form ("Amit", employee3id, 44)
+
+print(emp1.show(), emp2.show(), emp3.show())
+
+class devs(form):
+    def language(self):
+        self.lang= "python"
+        print(" the language used is", self.lang)
+
+emp1= devs("Arjun", employee1id, 20)
+print(emp1.show(), emp1.language())
